@@ -1,0 +1,200 @@
+
+body {
+    padding:0px;
+    margin: 0px;
+    background-color: white;
+    color: black;
+    font-weight: 300; 
+    font-size: 13pt;
+}
+
+#sortable { 
+	list-style-type: none; 
+	margin: 0; 
+}
+
+#sortable div { 
+
+}
+
+#Attribute {
+	display: table-cell;
+	text-align: right;
+}
+
+#no_choice {
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+.display-option, .placeholder {
+	font-size: 1.4em; 
+	border: 1px solid black;
+	background-color: white;
+	display: table;
+	position: relative;
+	height: 100px;
+	width: 100%;
+	padding: 0 10px;
+	margin: 10px 0;
+}
+
+.display-content {
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.info-button {
+	position:absolute;
+	right:10px;
+	top:30px;	
+}
+
+/* .placeholder { */
+/*     border: 1px solid black; */
+/*     background-color: white; */
+/*     -webkit-box-shadow: 0px 0px 10px #888; */
+/*     -moz-box-shadow: 0px 0px 10px #888; */
+/*     box-shadow: 0px 0px 10px #888; */
+/* } */
+
+.card {
+	display: table-cell;
+	width: 200px;
+	text-align: center;
+	position: relative;
+}
+
+/* Style for the attribute labels in the first column */
+#dce_table td:nth-child(1) {
+	width: 200px;
+	height: 50px;
+	text-align: right;
+}
+
+/* Style for all the proceeding columns */
+#dce_table td:nth-child(n+2) {
+	width: 200px;
+	text-align: center;
+	padding: 10px;
+}
+
+.warning {
+	background-color: red;	
+}
+
+.splash {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(255,255,255,0.8);
+	text-align: center;
+	line-height: 600px;
+	vertical-align: middle;
+	font-size: 30pt;
+}
+
+.btn-black, .btn-black:hover, .btn-black:focus {
+	color: white;
+	background-color: black;	
+}
+
+.btn-confirm, .btn-confirm:focus, .btn-confirm:hover {
+	color: white;
+	background-color: #202020;
+	width: 180px;
+	line-height: 40px;
+	font-size: 16pt;
+}
+
+.active-letter {
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 50pt;
+}
+
+.other-letter {
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 24pt;
+}
+
+/* text styling */
+strong {
+  font-weight: 600;         
+}
+
+.warm {
+  color: steelblue;
+  text-align: justify;
+}
+
+.cool {
+  color: #ccccff;
+}
+
+
+/* these are all the same for now, but easy to modify individually */
+#container-ad, #container-error, #container-exp, #container-consent, #container-instructions, #container-questionnaire {
+    top: 0px; /* Header Height */
+    bottom: 0px; /* Footer Height */
+    left: 0px;
+    right: 0px;
+    padding: 100px;
+    padding-top: 5%;
+    border: 18px solid #f3f3f3;
+    background: white;
+}
+
+#container-consent, #container-exp {  /* override padding to fit long consent forms and exp display*/
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 1%;
+}
+
+/* ad.html  - the ad that people view first */
+#adlogo {
+    float: right;
+    width: 140px;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+/* consent.html - the consent form */
+#consent {
+  margin: 0 auto;
+  margin-top: 0;
+  width: 800px;
+  font-size: 100%;
+}
+
+.legal {
+  text-align: justify;
+  font-size: 11pt;
+  line-height: 1.1em;
+}
+
+#trial {
+  margin: 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+#query {
+  color: darkgray;
+}
+
+.question {
+  margin-bottom: 30px;
+}
+
+/* errors */
+#error img {
+  padding-right: 10px;
+  padding-top: 15px;
+}

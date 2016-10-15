@@ -1,0 +1,72 @@
+<div id="container-questionnaire">
+  <h1>Questions</h1>
+
+  <hr>
+
+  <p>Please answer the following questions</p>
+
+  <div class="well">
+
+    <form class="form-inline" id="postquiz" role="form">
+          
+      <div class="row">
+        How did you find this HIT? (examples include turkernation or mturk search)<br/>
+        <textarea class="form-control" style="width: 100%;" rows="2" id="foundvia"></textarea>
+      </div>
+      <br/>
+      
+      <div class="row">
+        How many experiments like this have you taken before? Specifically, how many HITs have you taken where you were asked to make a series of choices between 2 or more products?<br/>
+        <select id="experience" name="experience">
+          <option value=""> </option>
+          <option value="0">None, this is the first</option>
+          <option value="1_5">Between 1 and 5</option>
+          <option value="6_10">Between 6 and 10</option>
+          <option value="10+">More than 10</option>
+        </select>
+      </div>
+      <br/>
+      
+      <div class="row">
+        May we contact you (using the turk system and your worker ID) with other surveys or follow up questions?
+        <div class="radio">
+          <label><input type="radio" name="followup" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="followup" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+      
+      <div class="row">
+        Please list any reason you can think of for why we should exclude your data from our analysis. <strong>Your answer will in no way be used to reject your work</strong>. This is academic research and we very much want to know if our results are correct. If you can't think of any reason then please leave this blank.<br/>
+        <textarea class="form-control optional" style="width: 100%;" rows="2" id="exclude">
+        </textarea>
+      </div>
+      <br/>
+      
+      <div class="row">Is there anything you would like to tell us?<br/>
+        <textarea class="form-control optional" style="width: 100%;" rows="2" id="extra">
+        </textarea>
+      </div>
+      <br/>
+      
+    </form>
+
+  </div>
+
+  <hr>
+
+  <div class="instructionsnav">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-7"></div>
+      <div class="col-xs-3">
+        <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+          Continue <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

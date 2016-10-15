@@ -1,0 +1,209 @@
+<div id="container-questionnaire">
+  <h1>Questions (Page 1 of 3)</h1>
+
+  <hr>
+
+  <p>Please answer the following demographic questions</p>
+
+  <div class="well">
+
+    <form class="form-inline" id="demographics" role="form">
+
+      <div class="row">Do you own a car?<br/>
+        <select id="car_own" >
+          <option value=""> </option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <br/>
+    
+      <div class="row">
+        If you commute to work, what mode do you use? (if you use multiple modes, choose the one you spend the most time on)<br/>
+        <select id="commute" >
+          <option value=""></option>
+          <option value="0">I don't commute to work </option>
+          <option value="1">Drive alone</option>
+          <option value="2">Carpool</option>
+          <option value="3">Walk</option>
+          <option value="4">Bike</option>
+          <option value="5">Bus</option>
+          <option value="6">Train</option>
+          <option value="7">Rideshare (e.g. Uber/Lyft)</option>
+          <option value="8">Carshare (e.g. Zipcar/car2go)</option>
+        </select>
+      </div>
+      <br/>
+      
+      <div class="row">
+        If you carpool, with how many people?<br/>
+        <select id="carpool" class="optional">
+          <option value=""> </option>
+          <option value="1">1 other person</option>
+          <option value="2">2 other people</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">More than 4 people</option>
+        </select>
+      </div>
+      <br/>
+    
+      <div class="row">
+        How often do you take public transportation?<br/>
+        <select id=="public_freq">
+          <option value=""> </option>
+          <option value="0">Never</option>
+          <option value="1"> 1-11 times a year</option>
+          <option value="2">1-3 times a month</option>
+          <option value="3"> 1 time a week</option>
+          <option value="4"> Every day</option>
+        </select>
+      </div>
+      <br/>
+    
+      <div class="row">
+        When you travel to work, what things would drive your transportation decisions besides the price?<br/>
+        <textarea class="travel-factors" style="width: 100%;" rows="2" id="travel-factors">
+        </textarea>
+      </div>
+      <br/>
+      
+      <div class="row">
+        What is your age in years?
+        <input class="form-control" name="age" type="text" id="age" />        
+      </div>
+      <br/>
+
+      <div class="row">
+        <div class="form-group">
+          What is your 5 digit zipcode?
+          <input class="form-control" name="zip" id="zip" type="text" />
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        What is your Gender?
+        <div class="radio">
+          <label><input type="radio" name="gender" value="Male">Male</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="gender" value="Female">Female</label>
+        </div>
+      </div>
+      <br/>
+
+      <!-- Education Question -->
+      <div class="row">Which of the following best describes your highest achieved education level?<br/>
+        <select id="education" name="education">
+          <option value=""> </option>
+          <option value="1">Some high school</option>
+          <option value="2">High school graduate (includes equivalency)</option>
+          <option value="3">Some college, no degree</option>
+          <option value="4">Associate's degree</option>
+          <option value="5">Bachelor's degree</option>
+          <option value="6">Graduate degree, Masters</option>
+          <option value="7">Graduate degree, Doctorate</option>
+        </select>
+      </div>
+      <br/>
+
+      <!-- Income Question -->
+      <div class="row">What is the total income of your household?<br/>
+        <select id="income" name="income">
+          <option value=""> </option>
+          <option value="1">Less than $10,000</option>
+          <option value="2">$10,000-$14,999</option>
+          <option value="3">$15,000-$24,999</option>
+          <option value="4">$25,000-$39,499</option>
+          <option value="5">$39,500-$59,999</option>
+          <option value="6">$60,000-$74,999</option>
+          <option value="7">$75,000-$99,999</option>
+          <option value="8">$100,000-$149,999</option>
+          <option value="9">$150,000-$199,999</option>
+          <option value="10">$200,000-$249,999</option>
+          <option value="11">$300,000 or more</option>
+        </select>
+      </div>
+      <br/>
+
+      <div class="row">
+        Have you ever booked a rental using Airbnb?
+        <div class="radio">
+          <label><input type="radio" name="airbnb" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="airbnb" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        Have you ever used a ridesharing service like Uber or Lyft to get somewhere?
+        <div class="radio">
+          <label><input type="radio" name="rideshare" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="rideshare" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        Do you currently have a subscription to Netflix?
+        <div class="radio">
+          <label><input type="radio" name="netflix" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="netflix" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        Are you an Amazon Prime Member?
+        <div class="radio">
+          <label><input type="radio" name="prime_status" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="prime_status" value="No">No</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="prime_status" value="unknown">I don't know</label>
+        </div>
+      </div>
+      <br/>
+
+
+      <div class="row">
+        Do you currently live in a house with a web-enabled thermostat? (like a Nest learning thermostat, Ecobee, or Wink)
+        <div class="radio">
+          <label><input type="radio" name="smart_therm" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="smart_therm" value="No">No</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="smart_therm" value="unknown">I don't know</label>
+        </div>
+      </div>
+      <br/>
+    
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="instructionsnav">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-7"></div>
+      <div class="col-xs-3">
+        <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+          Continue <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

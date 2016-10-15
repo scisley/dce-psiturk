@@ -1,0 +1,169 @@
+<div id="container-questionnaire">
+  <h1>Questions</h1>
+
+  <hr>
+
+  <p>Please answer the following demographic questions</p>
+
+  <div class="well">
+
+    <form class="form-inline" id="demographics" role="form">
+
+      <div class="row">How often do you purchase organic apparel?<br/>
+        <select id="purchase_freq" name="purchase_freq">
+          <option value=""> </option>
+          <option value="0">Never</option>
+          <option value="1">Once every 2-5 years </option>
+          <option value="2">Once a year</option>
+          <option value="3">Once a month</option>
+          <option value="4">Once a week</option>
+        </select>
+      </div>
+      <br/>
+    
+      <div class="row">
+        When you buy shirts, what things would drive your decision besides the price?<br/>
+        <textarea class="shirt_factors" style="width: 100%;" rows="2" id="shirt_factors">
+        </textarea>
+      </div>
+      <br/>
+    
+      <div class="row">
+        What is your age in years?
+        <input class="form-control" name="age" type="text" id="age" />        
+      </div>
+      <br/>
+
+      <div class="row">
+        <div class="form-group">
+          What is your 5 digit zipcode?
+          <input class="form-control" name="zip" id="zip" type="text" />
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        What is your Gender?
+        <div class="radio">
+          <label><input type="radio" name="gender" value="Male">Male</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="gender" value="Female">Female</label>
+        </div>
+      </div>
+      <br/>
+
+      <!-- Education Question -->
+      <div class="row">Which of the following best describes your highest achieved education level?<br/>
+        <select id="education" name="education">
+          <option value=""> </option>
+          <option value="1">Some high school</option>
+          <option value="2">High school graduate (includes equivalency)</option>
+          <option value="3">Some college, no degree</option>
+          <option value="4">Associate's degree</option>
+          <option value="5">Bachelor's degree</option>
+          <option value="6">Graduate degree, Masters</option>
+          <option value="7">Graduate degree, Doctorate</option>
+        </select>
+      </div>
+      <br/>
+
+      <!-- Income Question -->
+      <div class="row">What is the total income of your household?<br/>
+        <select id="income" name="income">
+          <option value=""> </option>
+          <option value="1">Less than $10,000</option>
+          <option value="2">$10,000-$14,999</option>
+          <option value="3">$15,000-$24,999</option>
+          <option value="4">$25,000-$39,499</option>
+          <option value="5">$39,500-$59,999</option>
+          <option value="6">$60,000-$74,999</option>
+          <option value="7">$75,000-$99,999</option>
+          <option value="8">$100,000-$149,999</option>
+          <option value="9">$150,000-$199,999</option>
+          <option value="10">$200,000-$249,999</option>
+          <option value="11">$300,000 or more</option>
+        </select>
+      </div>
+      <br/>
+
+      <div class="row">
+        Have you ever booked a rental using Airbnb?
+        <div class="radio">
+          <label><input type="radio" name="airbnb" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="airbnb" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        Have you ever used a ridesharing service like Uber or Lyft to get somewhere?
+        <div class="radio">
+          <label><input type="radio" name="rideshare" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="rideshare" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        Do you currently have a subscription to Netflix?
+        <div class="radio">
+          <label><input type="radio" name="netflix" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="netflix" value="No">No</label>
+        </div>
+      </div>
+      <br/>
+
+      <div class="row">
+        Are you an Amazon Prime Member?
+        <div class="radio">
+            <label><input type="radio" name="prime_status" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="prime_status" value="No">No</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="prime_status" value="unknown">I don't know</label>
+        </div>
+      </div>
+      <br/>
+
+
+      <div class="row">
+        Do you currently live in a house with a web-enabled thermostat? (like a Nest learning thermostat, Ecobee, or Wink)
+        <div class="radio">
+          <label><input type="radio" name="smart_therm" value="Yes">Yes</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="smart_therm" value="No">No</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="smart_therm" value="unknown">I don't know</label>
+        </div>
+      </div>
+      <br/>
+
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="instructionsnav">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-7"></div>
+      <div class="col-xs-3">
+        <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+          Continue <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+[HIT Configuration]
+title = Some Title
+description = Some description
+amt_keywords = some keywords
+lifetime = 200
+us_only = true
+approve_requirement = 95
+contact_email_on_error = your@email.com
+ad_group = some ad_group
+psiturk_keywords =
+organization_name = your org name
+browser_exclude_rule = mobile, tablet
+
+[Database Parameters]
+database_url = mysql://user:password@localhost:3306/your_db_name
+table_name = some_db_table_name
+
+[Server Parameters]
+host = 0.0.0.0
+port = 80 
+cutoff_time = 30
+logfile = server.log
+loglevel = 2
+debug = true
+login_username = examplename
+login_pw = examplepassword
+threads = auto
+
+[Task Parameters]
+experiment_code_version = 1.0
+num_conds = 9
+num_counters = 4
+
+[Shell Parameters]
+launch_in_sandbox_mode = true

@@ -1,0 +1,90 @@
+<div id="container-questionnaire">
+
+  <h2>Alternative Display Methods</h2>
+  
+  <p>
+    You just participated in an experiment where you saw one particular way of displaying
+    information about the carbon produced by a particular product. (A few survey takers did
+    not see any information about carbon)
+  </p>
+  <p>
+    Other survey takers saw a different display method. We are interested in how much
+    you like these other display methods. Please arrange the display methods below in 
+    order of most useful (click and drag the item to the top) to least useful (drag the item
+    to the bottom). "Useful" in this case means it helps you understand the environmental
+    impact of the product in a way that matters to you. 
+  </p>
+  <p>
+    If any display method is unclear, you can click on the question mark on the right side 
+    of each item to see some additional information.
+  </p>
+
+  <div class="well" style="position:relative;">
+
+    <div id="sortable">
+      <div id="abs_g" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_abs_g" class="info-button">?</button>
+      </div>
+      <div id="driving" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_driving" class="info-button">?</button>
+      </div>
+      <div id="factory" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_factory" class="info-button">?</button>
+      </div>
+      <div id="leaf" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_leaf" class="info-button">?</button> 
+      </div>
+      <div id="ggradient" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_ggradient" class="info-button">?</button>
+      </div>
+      <div id="cgradient" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_cgradient" class="info-button">?</button>
+      </div>
+      <div id="lowc" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_lowc" class="info-button">?</button>
+      </div>
+      <div id="highc" class="display-option">
+        <div class="display-content"></div>
+        <button type="button" id="b_highc" class="info-button">?</button>
+      </div>
+    </div>
+
+  </div>
+  
+  <hr>
+  
+  <form id="display">
+    <div class="row">Why did you choose the ranking you did?<br/>
+      <textarea class="form-control" style="width: 100%;" rows="2" id="rankingExp"></textarea>
+    </div>
+    <br/>
+    <div class="row">
+      Are any of the display methods confusing? Please describe which ones and why.<br/>
+      <textarea class="form-control" style="width: 100%;" rows="2" id="confusion"></textarea>
+    </div>
+  </form>   
+  
+  <hr>
+
+  <div class="instructionsnav">
+    <div class="row">
+      <div class="col-xs-2">
+      </div>
+      <div class="col-xs-7">
+      </div>
+      <div class="col-xs-3">
+        <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+          Continue <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

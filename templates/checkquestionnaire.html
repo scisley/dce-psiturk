@@ -1,0 +1,43 @@
+<div id="container-questionnaire">
+  <h1>Check Question</h1>
+
+  <hr>
+
+  <div class="well">
+
+    <form class="form-inline" id="checkquiz" role="form">
+      <div class="row">
+        The following question tests how carefully you read the instructions. <strong>Please do not use the back button, it will cause an error.</strong> Don't worry if you can't remember the answer. You'll still be paid as long as your answers don't look completely random after this. We are interested in how well people can recall the information.
+      </div>
+      <br/>
+          
+      <div class="row">
+        What was the number combination we asked you to remember during the instructions?<br/>
+        <select id="hypotheticalBias" name="hypotheticalBias">
+          <option value=""> </option>
+          <option value="wrong1">23% vs 60%</option>
+          <option value="right">43% vs 80%</option>
+          <option value="wrong2">75% vs 30%</option>
+          <option value="wrong3">12% vs 55%</option>
+        </select>
+      </div>
+      <br/>
+    
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="instructionsnav">
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-7"></div>
+      <div class="col-xs-3">
+        <button type="button" id="next" value="next" class="btn btn-primary btn-lg continue">
+          Continue <span class="glyphicon glyphicon-arrow-right"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
