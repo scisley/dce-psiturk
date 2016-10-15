@@ -209,12 +209,12 @@ var experiment_parameter_setup = function(expNum){
   descs = [           
     {
     //Shirt 
-      price: 	'This is the price you would pay at the register.', 
-      org:	  'The percent of organic cotton in shirt. ', 
-      plab: 	'Organic shirts use dyes and methods which meet standards set by the Organic' +
+      price:  'This is the price you would pay at the register.', 
+      org:    'The percent of organic cotton in shirt. ', 
+      plab:   'Organic shirts use dyes and methods which meet standards set by the Organic' +
               'Trade Association. Eco-friendly shirts use low-impact synthetic dyes which ' +
               'reduce water pollution.', 
-      slab: 	'Fair trade products pay sustainable wages to producers in developing countries.',
+      slab:   'Fair trade products pay sustainable wages to producers in developing countries.',
       cf:     formatters[mycondition].help + dueTo[expNum]
     }, {
     //Refrigerator
@@ -316,7 +316,7 @@ var experiment_parameter_setup = function(expNum){
     
     return params[num];
   };
-		                
+                    
   psiTurk.preloadImages(refrigerator_images);
 
   psiTurk.preloadPages(pages);
@@ -337,106 +337,106 @@ var experiment_parameter_setup = function(expNum){
 
 // Ranking Task
 var DisplayMethods = function() {
-	
-	psiTurk.showPage('display_methods.html');
-	psiTurk.recordTrialData({'phase':'displaymethods', 'status':'begin'});
-	
-	var pop_template = {
-		content:'',
-		title: 'Details', 
+  
+  psiTurk.showPage('display_methods.html');
+  psiTurk.recordTrialData({'phase':'displaymethods', 'status':'begin'});
+  
+  var pop_template = {
+    content:'',
+    title: 'Details', 
         placement: 'left', 
         container: 'body'};
-	
-	$.each(formatters, function(i, formatter) {
-	    console.log(formatter.name);
-		var pop = jQuery.extend({}, pop_template);
-		pop.content = formatter.help;
-		$('#b_' + formatter.name).popover(pop);
-		if(formatter.name.localeCompare('highc') == 0)
-		  $('#' + formatter.name + '>.display-content').html( formatter.text(carbon_levels[expNumber][2]) );
-		else if(formatter.name.localeCompare('lowc') == 0)
-		  $('#' + formatter.name + '>.display-content').html( formatter.text(carbon_levels[expNumber][0]) );
-		else {
-		  $('#' + formatter.name + '>.display-content').html( formatter.text(carbon_levels[expNumber][1]) );
-		}
-	});
-	
-	$('.display-option').randomize();
-	var ini_order = $('.display-option').map( function() { return this.id; }).get().join();
-	console.log(ini_order);
-	psiTurk.recordUnstructuredData('iniOrder', ini_order );
-	
-	$( '#sortable' ).sortable( {
-		axis: 'y',
+  
+  $.each(formatters, function(i, formatter) {
+      console.log(formatter.name);
+    var pop = jQuery.extend({}, pop_template);
+    pop.content = formatter.help;
+    $('#b_' + formatter.name).popover(pop);
+    if(formatter.name.localeCompare('highc') == 0)
+      $('#' + formatter.name + '>.display-content').html( formatter.text(carbon_levels[expNumber][2]) );
+    else if(formatter.name.localeCompare('lowc') == 0)
+      $('#' + formatter.name + '>.display-content').html( formatter.text(carbon_levels[expNumber][0]) );
+    else {
+      $('#' + formatter.name + '>.display-content').html( formatter.text(carbon_levels[expNumber][1]) );
+    }
+  });
+  
+  $('.display-option').randomize();
+  var ini_order = $('.display-option').map( function() { return this.id; }).get().join();
+  console.log(ini_order);
+  psiTurk.recordUnstructuredData('iniOrder', ini_order );
+  
+  $( '#sortable' ).sortable( {
+    axis: 'y',
         tolerance: 'pointer',
         placeholder: 'ui-state-default placeholder',
         forceHelperSize: true});
-	 
-	$('#next').click(function () {
-		
-		if (confirmEntry('display')) {			
-			var rank = $('.display-option').map(function(val, i) {
-				return this.id;
-			}).get();
-			
-			$.map(rank, function(value, i) {	
-				console.log('rank'+i + ',' + value );
-				psiTurk.recordUnstructuredData('rank'+i, value );	
-			});
-			
-			recordResponses('display');
-			
-			currentview = new Demographics();
-		}
-	});
-	
+   
+  $('#next').click(function () {
+    
+    if (confirmEntry('display')) {      
+      var rank = $('.display-option').map(function(val, i) {
+        return this.id;
+      }).get();
+      
+      $.map(rank, function(value, i) {  
+        console.log('rank'+i + ',' + value );
+        psiTurk.recordUnstructuredData('rank'+i, value ); 
+      });
+      
+      recordResponses('display');
+      
+      currentview = new Demographics();
+    }
+  });
+  
 };
 
 var Questionnaire = function() {
-	
-	psiTurk.showPage('postquestionnaire.html');
-	psiTurk.recordTrialData({'phase':'questionnaire', 'status':'begin'});
-	
-	$('#next').click(function () {
-		if (confirmEntry('postquiz')) {
-			recordResponses('postquiz');
-		    psiTurk.saveData({
+  
+  psiTurk.showPage('postquestionnaire.html');
+  psiTurk.recordTrialData({'phase':'questionnaire', 'status':'begin'});
+  
+  $('#next').click(function () {
+    if (confirmEntry('postquiz')) {
+      recordResponses('postquiz');
+        psiTurk.saveData({
           success: function(){
               psiTurk.completeHIT(); // when finished quit
           }, 
           error: prompt_resubmit});
-		}
-	});
-	
+    }
+  });
+  
 };
 
 var Demographics = function() {
-	
-	psiTurk.showPage(demographics);
-	psiTurk.recordTrialData({'phase':'demographics', 'status':'begin'});
-	
+  
+  psiTurk.showPage(demographics);
+  psiTurk.recordTrialData({'phase':'demographics', 'status':'begin'});
+  
 
-	$('#next').click(function () {
-		if (confirmEntry('demographics')) {
-			recordResponses('demographics');
-			currentview = new Questionnaire();
-		}
-	});
-	
+  $('#next').click(function () {
+    if (confirmEntry('demographics')) {
+      recordResponses('demographics');
+      currentview = new Questionnaire();
+    }
+  });
+  
 };
 
 var CheckQuestionnaire = function() {
-	psiTurk.recordTrialData({'phase':'check', 'status':'begin'});
-	
-	psiTurk.showPage(checkquestionnaire);
-	
-	$('#next').click(function() {
-		if (confirmEntry('checkquiz')) {
-			recordResponses('checkquiz');
-			currentview = new DCE(experiment_data);
-		}
-	});	
-	
+  psiTurk.recordTrialData({'phase':'check', 'status':'begin'});
+  
+  psiTurk.showPage(checkquestionnaire);
+  
+  $('#next').click(function() {
+    if (confirmEntry('checkquiz')) {
+      recordResponses('checkquiz');
+      currentview = new DCE(experiment_data);
+    }
+  }); 
+  
 };
 
 /**
@@ -446,151 +446,151 @@ var CheckQuestionnaire = function() {
  */
 var DCE = function(ed) {
   console.log(ed);
-	psiTurk.showPage('dce.html');
-	psiTurk.recordTrialData({'phase':'DCE', 'status':'begin'});
-	// Add test setup information
-	psiTurk.recordUnstructuredData('condition', mycondition);
-	psiTurk.recordUnstructuredData('counterbalance', mycounterbalance);
-	psiTurk.recordUnstructuredData('display', formatters[mycondition].name);
-		
-	var choice_index = 0;
-	
-	var setupChoiceTable = function() {
-		
-		// Add the attribute rows to the table
-		for (attr in ed.attr_labels) {
-			// Skip this row if we're not showing any carbon information.
-			if (mycondition === 0 & attr === 'cf') continue;
-			var row_string = '<tr><td id="attr' + attr + '">' + ed.attr_labels[attr] + '</td>';
-			for (card in ed.card_labels) {
-				row_string += '<td id="' + ed.card_labels[card] + attr + '">1</td>';
-			}
-			row_string += '</tr>';
-			$('#dce_table').find('tbody').append(row_string);
-			$('#attr' + attr).tooltip({container: 'body', placement: 'center', title:ed.attr_desc[attr]});
-		}	
-		
-		// Add the radio selector buttons to the bottom of the table
-		var radio_string = '<tr><td></td>';
-		for (card in ed.card_labels) {
-			radio_string += '<td><label><input type="radio" id="' + ed.card_labels[card] 
-							 + 'radio" name="choice" value="error"></label></td>'
-		}
-		radio_string += '</tr>';
-		$('#dce_table').find('tbody').append(radio_string);
-		
-	};
-	
-	var choiceMade = function() {
-		return ($('input[name=choice]:checked').val());
-	};
-	
-	var updateChoiceSet = function(i) {
-		// Uncheck the radio buttons
-		$('input[name=choice]:checked').prop('checked', false);
-		$('.progress-bar').css('width', 100*(i+1)/ed.choice_sets.length + '%');
-		$('#progresslabel').text('Progress: ' + (i+1) + ' of ' + ed.choice_sets.length);
-		
-		// Log the next choice situation and get it loaded
-		console.log('Progress: ' + (i + 1) + ', Choice Set ' + 
-				    ed.choice_sets[i].choice_set);
-		
-		for (card in ed.card_labels) {
-			for (attr in ed.attr_labels) {
-				// Load the value
-				var value = ed.choice_sets[i][card][attr];
-				if (value[0] === '/') {
-					// This is an image
-					$('#' + ed.card_labels[card] + attr).html('<img src="' + ed.choice_sets[i][card][attr] + '"></img>');
-				} else {
-					$('#' + ed.card_labels[card] + attr).html( value );
-				}
-			};
-			// Update option button value so data is saved according to formatting before randomization
-			$('#' + ed.card_labels[card] +'radio').prop('value', 'alt'+ed.choice_sets[i][card]['alt']);
-		};
+  psiTurk.showPage('dce.html');
+  psiTurk.recordTrialData({'phase':'DCE', 'status':'begin'});
+  // Add test setup information
+  psiTurk.recordUnstructuredData('condition', mycondition);
+  psiTurk.recordUnstructuredData('counterbalance', mycounterbalance);
+  psiTurk.recordUnstructuredData('display', formatters[mycondition].name);
+    
+  var choice_index = 0;
+  
+  var setupChoiceTable = function() {
+    
+    // Add the attribute rows to the table
+    for (attr in ed.attr_labels) {
+      // Skip this row if we're not showing any carbon information.
+      if (mycondition === 0 & attr === 'cf') continue;
+      var row_string = '<tr><td id="attr' + attr + '">' + ed.attr_labels[attr] + '</td>';
+      for (card in ed.card_labels) {
+        row_string += '<td id="' + ed.card_labels[card] + attr + '">1</td>';
+      }
+      row_string += '</tr>';
+      $('#dce_table').find('tbody').append(row_string);
+      $('#attr' + attr).tooltip({container: 'body', placement: 'center', title:ed.attr_desc[attr]});
+    } 
+    
+    // Add the radio selector buttons to the bottom of the table
+    var radio_string = '<tr><td></td>';
+    for (card in ed.card_labels) {
+      radio_string += '<td><label><input type="radio" id="' + ed.card_labels[card] 
+               + 'radio" name="choice" value="error"></label></td>'
+    }
+    radio_string += '</tr>';
+    $('#dce_table').find('tbody').append(radio_string);
+    
+  };
+  
+  var choiceMade = function() {
+    return ($('input[name=choice]:checked').val());
+  };
+  
+  var updateChoiceSet = function(i) {
+    // Uncheck the radio buttons
+    $('input[name=choice]:checked').prop('checked', false);
+    $('.progress-bar').css('width', 100*(i+1)/ed.choice_sets.length + '%');
+    $('#progresslabel').text('Progress: ' + (i+1) + ' of ' + ed.choice_sets.length);
+    
+    // Log the next choice situation and get it loaded
+    console.log('Progress: ' + (i + 1) + ', Choice Set ' + 
+            ed.choice_sets[i].choice_set);
+    
+    for (card in ed.card_labels) {
+      for (attr in ed.attr_labels) {
+        // Load the value
+        var value = ed.choice_sets[i][card][attr];
+        if (value[0] === '/') {
+          // This is an image
+          $('#' + ed.card_labels[card] + attr).html('<img src="' + ed.choice_sets[i][card][attr] + '"></img>');
+        } else {
+          $('#' + ed.card_labels[card] + attr).html( value );
+        }
+      };
+      // Update option button value so data is saved according to formatting before randomization
+      $('#' + ed.card_labels[card] +'radio').prop('value', 'alt'+ed.choice_sets[i][card]['alt']);
+    };
 
-	};
-	
-	var saveData = function() {
-		psiTurk.recordUnstructuredData( 'choiceset' + ed.choice_sets[choice_index].choice_set, 
+  };
+  
+  var saveData = function() {
+    psiTurk.recordUnstructuredData( 'choiceset' + ed.choice_sets[choice_index].choice_set, 
                 $('input[name=choice]:checked').val() );
-		console.log('for choiceset ' + ed.choice_sets[choice_index].choice_set + ' user chose ' +
+    console.log('for choiceset ' + ed.choice_sets[choice_index].choice_set + ' user chose ' +
                 $('input[name=choice]:checked').val() );
-	};
-	
-	$('#next').click(function() {
-		// If a choice hasn't been made, present an alert
-		if (!choiceMade()) {
-			alert('You must make a selection before proceeding');
-		} else if (choice_index >= ed.choice_sets.length-1) {
-			// Finished with choice experiment
-			saveData();
-			console.log('Finished with DCE choices!');
-			currentview = new DisplayMethods();
-		} else {
-			// Save the current choice then load the next one
-			saveData();
-			choice_index++;
-			updateChoiceSet(choice_index);
-		}
-	});
-	
-	// Setup choice table and load the first choice set
-	setupChoiceTable();
-	
-	// Load up the first choice set
-	updateChoiceSet(choice_index);
-	
+  };
+  
+  $('#next').click(function() {
+    // If a choice hasn't been made, present an alert
+    if (!choiceMade()) {
+      alert('You must make a selection before proceeding');
+    } else if (choice_index >= ed.choice_sets.length-1) {
+      // Finished with choice experiment
+      saveData();
+      console.log('Finished with DCE choices!');
+      currentview = new DisplayMethods();
+    } else {
+      // Save the current choice then load the next one
+      saveData();
+      choice_index++;
+      updateChoiceSet(choice_index);
+    }
+  });
+  
+  // Setup choice table and load the first choice set
+  setupChoiceTable();
+  
+  // Load up the first choice set
+  updateChoiceSet(choice_index);
+  
 };
 
 /* Takes an experimental design and formats it for later use */
 var formatExperiment = function(data) {
-	// Grab just the data for the block, not needed if no blocks
-	// data = _.filter(data, function(obj) { return(obj.Block === mycondition + 1); } );
-	
-	// Shuffle the experimental design and record the new order for later analysis
-	data = _.shuffle(data);
-	
-	var shuffled_order = $.map(data, function(val,i) {
-		return(val['Choice.situation']);
-	});
-	psiTurk.recordUnstructuredData('shuffled_order', shuffled_order);
-	
-	var formatter = formatters[mycondition].text;
-	
-	var d = {};
-	
-	//attrs and descs are arrays of attributes and descriptions for display
-	//they are input by experiment number, which is determined by condition and 
-	//counterbalance. 
-	d.attr_labels = attrs[expNumber];
-	
-	d.attr_desc = descs[expNumber];
-	
-	// The labels are the html id's of where the info will go 
-	d.card_labels = {alt1: 'card1', alt2: 'card2'};
+  // Grab just the data for the block, not needed if no blocks
+  // data = _.filter(data, function(obj) { return(obj.Block === mycondition + 1); } );
+  
+  // Shuffle the experimental design and record the new order for later analysis
+  data = _.shuffle(data);
+  
+  var shuffled_order = $.map(data, function(val,i) {
+    return(val['Choice.situation']);
+  });
+  psiTurk.recordUnstructuredData('shuffled_order', shuffled_order);
+  
+  var formatter = formatters[mycondition].text;
+  
+  var d = {};
+  
+  //attrs and descs are arrays of attributes and descriptions for display
+  //they are input by experiment number, which is determined by condition and 
+  //counterbalance. 
+  d.attr_labels = attrs[expNumber];
+  
+  d.attr_desc = descs[expNumber];
+  
+  // The labels are the html id's of where the info will go 
+  d.card_labels = {alt1: 'card1', alt2: 'card2'};
 
-	d.show_none = false;
+  d.show_none = false;
 
-	// Loop through each item in the data array and create an output to be used later
-	// in showing the choice situation. Randomize the order of cards within a choice set
-	d.choice_sets = $.map(data, function(val,i) {
+  // Loop through each item in the data array and create an output to be used later
+  // in showing the choice situation. Randomize the order of cards within a choice set
+  d.choice_sets = $.map(data, function(val,i) {
     // Shuffle an array from 1 to the number of cards
     var alts = _.shuffle(_.range(1, _.values(d.card_labels).length+1));
     var set = {};
     for (var j=0; j < alts.length; j++) {
-	    var name = 'alt' + alts[j];
-	    //exp_params is a function which takes the val (exp data), index j
-	    //(alt number), expNumber, the relevant formatter, the array of alts,
-	    //and returns the proper set of values
-	    set['alt'+(j+1)] = exp_params(val, j, name, expNumber, formatter, alts);
+      var name = 'alt' + alts[j];
+      //exp_params is a function which takes the val (exp data), index j
+      //(alt number), expNumber, the relevant formatter, the array of alts,
+      //and returns the proper set of values
+      set['alt'+(j+1)] = exp_params(val, j, name, expNumber, formatter, alts);
     }
     set.choice_set = val['Choice.situation'];
     return(set);
-	});
-	
-	return( d );
+  });
+  
+  return( d );
 };
 
 
@@ -600,7 +600,7 @@ var formatExperiment = function(data) {
  * Run Task
  ******************/
 $(window).load( function(){
-	
+  
   // Shortcuts to set the condition/counterbalance 
   if (mode === 'debug') {
     // You can enable debug shortcuts like this:
@@ -640,15 +640,15 @@ $(window).load( function(){
     });
   }
 
-	// Monitor what buttons people click. (Uses jQuery delegated methods, very cool!)
-	$(document).on('click', 'button', function() {
-		var value = $.trim($(this).text());
-		var id = $(this).attr('id');
-		console.log(value + ', ' + id);
-		psiTurk.recordTrialData({'button_click': value, 'id': id});
-	});	
-		
-	// Start the experiment!
+  // Monitor what buttons people click. (Uses jQuery delegated methods, very cool!)
+  $(document).on('click', 'button', function() {
+    var value = $.trim($(this).text());
+    var id = $(this).attr('id');
+    console.log(value + ', ' + id);
+    psiTurk.recordTrialData({'button_click': value, 'id': id});
+  }); 
+    
+  // Start the experiment!
   var start_exp = function() {
     experiment_parameter_setup(expNumber);
     experiment_data = formatExperiment(exp[expNumber]);
